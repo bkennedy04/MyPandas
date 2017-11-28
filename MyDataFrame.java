@@ -335,6 +335,16 @@ public class MyDataFrame {
 		return loc;
 	}
 	
+	//Returns the rows between from and to (including from and to)
+	public MyDataFrame loc(int from, int to) {
+		
+		MyDataFrame loc = new MyDataFrame();
+		
+		for(int i = from; i <= to; i++) {
+			loc.babynames.add(babynames.get(i));
+		}
+		return loc;
+	}
 }
 
 

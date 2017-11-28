@@ -102,10 +102,15 @@ public class Test {
 		System.out.println("Filter on name = Brooke and year = 1995");
 		System.out.println(brooke1995.babynames);
 		
-		//test loc on index (100,000)
-		MyDataFrame locdf = baby.loc(100000);
-		System.out.println("Size of dataframe after loc(100,000):");
+		//test loc on index (1000000)
+		MyDataFrame locdf = baby.loc(1000000);
+		System.out.println("Size of dataframe after loc(1,000,000):");
 		System.out.println(locdf.babynames.size());
+		
+		//test loc from index 5 to index 10
+		MyDataFrame locrange = baby.loc(5, 10);
+		System.out.println("Size of dataframe after loc(5, 10):");
+		System.out.println(locrange.babynames.size());
 	
 System.out.println("\n------------------------------------------------------------------------------------\n");
 
