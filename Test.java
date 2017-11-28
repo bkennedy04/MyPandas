@@ -21,17 +21,15 @@ public class Test {
 	
 	//create dataframe from all babynames files
 	public static MyDataFrame loadBabyNames(ArrayList<String> files, String path) throws IOException {
-		
-		MyPandas pandas = new MyPandas();
 
 		//create dataframe from first and second file in list and concat them
-		MyDataFrame first = pandas.readCSV(path +"\\"+ files.get(0));
-		MyDataFrame sec = pandas.readCSV(path +"\\"+ files.get(1));
-		MyDataFrame df = pandas.concat(first, sec);
+		MyDataFrame first = MyPandas.readCSV(path +"\\"+ files.get(0));
+		MyDataFrame sec = MyPandas.readCSV(path +"\\"+ files.get(1));
+		MyDataFrame df = MyPandas.concat(first, sec);
 		//loop through the rest of the files
 		for(int i = 2; i < files.size(); i++) {
 			//concat all files into one
-			df = pandas.concat(df, pandas.readCSV(path +"\\"+ files.get(i)));
+			df = MyPandas.concat(df, MyPandas.readCSV(path +"\\"+ files.get(i)));
 		}
 		return df;
 	}
@@ -50,12 +48,12 @@ public class Test {
 		
 		//test head
 		MyDataFrame babyhead = baby.head(5);
-		System.out.println("Testing Head(5)");
+		System.out.println("Testing Head(5):");
 		System.out.println(babyhead.babynames);
 
 		//test tail
 		MyDataFrame babytail = baby.tail(5);
-		System.out.println("Testing Tail(5)");
+		System.out.println("Testing Tail(5):");
 		System.out.println(babytail.babynames);
 		//if you want to get rid of brackets and commas use this print method:
 		//for(int i = 0; i < babytail.babynames.size(); i++) {
@@ -138,11 +136,10 @@ public class Test {
 System.out.println("\n------------------------------------------------------------------------------------\n");
 
 		//test readcsv
-		MyPandas pandas = new MyPandas();
 		MyDataFrame mdf = null;
 		try {
 			String path = "C:\\Users\\bck00\\Documents\\Fall 2017\\Java and Python\\proj2\\babynames\\AK.TXT";
-			mdf = pandas.readCSV(path);
+			mdf = MyPandas.readCSV(path);
 		} 
 		catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -155,7 +152,7 @@ System.out.println("\n----------------------------------------------------------
 		
 		//test write Csv
 		try {
-			pandas.writeCSV(mdf, "newFileName.txt");
+			MyPandas.writeCSV(mdf, "newFileName.txt");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -166,14 +163,14 @@ System.out.println("\n----------------------------------------------------------
 		
 		try {
 			String path = "C:\\Users\\bck00\\Documents\\Fall 2017\\Java and Python\\proj2\\babynames\\AL.TXT";
-			mdf2 = pandas.readCSV(path);
+			mdf2 = MyPandas.readCSV(path);
 		} 
 		catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		MyDataFrame concat = pandas.concat(mdf, mdf2);
+		MyDataFrame concat = MyPandas.concat(mdf, mdf2);
 		for (int i = 0; i < 10; i++) {
 			System.out.println(concat.babynames.get(i));
 		}

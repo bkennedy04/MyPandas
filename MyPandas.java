@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class MyPandas {
 	
-	public MyDataFrame readCSV(String path) throws IOException {
+	public static MyDataFrame readCSV(String path) throws IOException {
 		
 		String[] headers = {"State", "Gender", "Year", "Name", "Count"};
 		
@@ -42,7 +42,7 @@ public class MyPandas {
 		return mydf;
 	}
 	
-	public void writeCSV(MyDataFrame data, String path) throws IOException {
+	public static void writeCSV(MyDataFrame data, String path) throws IOException {
 		
 		// File to write out, path has the file location and output file name
 		FileWriter writer = new FileWriter(path);
@@ -59,7 +59,7 @@ public class MyPandas {
 		writer.close();
 	}
 	
-	public MyDataFrame concat(MyDataFrame df1, MyDataFrame df2) {
+	public static MyDataFrame concat(MyDataFrame df1, MyDataFrame df2) {
 		//create final_mdf
 		String[] headers = {"State", "Gender", "Year", "Name", "Count"};
 		MyDataFrame final_mdf = new MyDataFrame (headers);
