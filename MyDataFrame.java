@@ -323,6 +323,18 @@ public class MyDataFrame {
 		}
 		return filtered;
 	}
+	
+	//Returns the rows starting from index
+	public MyDataFrame loc(int index) {
+		
+		MyDataFrame loc = new MyDataFrame();
+		
+		for(int i = index; i < babynames.size(); i++) {
+			loc.babynames.add(babynames.get(i));
+		}
+		return loc;
+	}
+	
 }
 
 

@@ -101,6 +101,11 @@ public class Test {
 		MyDataFrame brooke1995 = brooke.filter("year", "=", 1995).head(5);
 		System.out.println("Filter on name = Brooke and year = 1995");
 		System.out.println(brooke1995.babynames);
+		
+		//test loc on index (100,000)
+		MyDataFrame locdf = baby.loc(100000);
+		System.out.println("Size of dataframe after loc(100,000):");
+		System.out.println(locdf.babynames.size());
 	
 System.out.println("\n------------------------------------------------------------------------------------\n");
 
