@@ -2,8 +2,6 @@ package Project2;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.io.File;
 
 
@@ -111,6 +109,21 @@ public class Test {
 		MyDataFrame locrange = baby.loc(5, 10);
 		System.out.println("Size of dataframe after loc(5, 10):");
 		System.out.println(locrange.babynames.size());
+		
+		//test getMin on index 2 (year)
+		Object minYear = baby.getMin(2);
+		System.out.println("The min year is:");
+		System.out.println(minYear);
+		
+		//test getMin on index 3 (name)
+		Object minName = baby.getMin(3);
+		System.out.println("The name with min length is:");
+		System.out.println(minName);
+		
+		//test getMax on count
+		Object maxCount = baby.getMax("count");
+		System.out.println("The max count is:");
+		System.out.println(maxCount);
 	
 System.out.println("\n------------------------------------------------------------------------------------\n");
 

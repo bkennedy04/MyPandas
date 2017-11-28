@@ -1,6 +1,8 @@
 package Project2;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class MyDataFrame {
@@ -344,6 +346,238 @@ public class MyDataFrame {
 			loc.babynames.add(babynames.get(i));
 		}
 		return loc;
+	}
+	
+	//Returns the minimum element of the column specified by index
+	public Object getMin(int index) {
+		MyDataFrame col = new MyDataFrame();
+		Object min = null;
+		switch(index) {
+			//state
+			case 0:
+				break;
+				
+			//gender
+			case 1:
+				break;
+
+			//year
+			case 2:
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getYear((MyData) babynames.get(i)));
+				}
+				min = Integer.MAX_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num < (int) min) {
+						min = num;
+					}
+				}
+				break;
+				
+			//name -- returns name with min length
+			case 3:
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getName((MyData) babynames.get(i)));
+				}
+				min = Integer.MAX_VALUE;
+				int minInd = 0;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = ((String) col.babynames.get(i)).length();
+					if(num < (int) min) {
+						min = num;
+						minInd = i;
+					}
+				}
+				min = col.babynames.get(minInd);
+				break;
+				
+			//count
+			case 4:
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getCount((MyData) babynames.get(i)));
+				}
+				min = Integer.MAX_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num < (int) min) {
+						min = num;
+					}
+				}
+				break;
+		}
+		return min;
+	}
+	
+	//Returns the minimum element of the column specified by label
+	public Object getMin(String label) {
+		MyDataFrame col = new MyDataFrame();
+		Object min = null;
+		switch(label) {
+
+			case "state":
+				break;
+				
+			case "gender":
+				break;
+
+			case "year":
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getYear((MyData) babynames.get(i)));
+				}
+				min = Integer.MAX_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num < (int) min) {
+						min = num;
+					}
+				}
+				break;
+				
+			case "name":
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getName((MyData) babynames.get(i)));
+				}
+				min = Integer.MAX_VALUE;
+				int minInd = 0;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = ((String) col.babynames.get(i)).length();
+					if(num < (int) min) {
+						min = num;
+						minInd = i;
+					}
+				}
+				min = col.babynames.get(minInd);
+				break;
+				
+			case "count":
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getCount((MyData) babynames.get(i)));
+				}
+				min = Integer.MAX_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num < (int) min) {
+						min = num;
+					}
+				}
+				break;
+		}
+		return min;
+	}
+	
+	//Returns the maximum element of the column specified by index
+	public Object getMax(int index) {
+		MyDataFrame col = new MyDataFrame();
+		Object max = null;
+		switch(index) {
+			//state
+			case 0:
+				
+			//gender
+			case 1:
+
+			//year
+			case 2:
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getYear((MyData) babynames.get(i)));
+				}
+				max = Integer.MIN_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num > (int) max) {
+						max = num;
+					}
+				}
+				break;
+				
+			//name -- returns name with min length
+			case 3:
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getName((MyData) babynames.get(i)));
+				}
+				max = Integer.MIN_VALUE;
+				int maxInd = 0;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = ((String) col.babynames.get(i)).length();
+					if(num > (int) max) {
+						max = num;
+						maxInd = i;
+					}
+				}
+				max = col.babynames.get(maxInd);
+				break;
+				
+			//count
+			case 4:
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getCount((MyData) babynames.get(i)));
+				}
+				max = Integer.MIN_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num > (int) max) {
+						max = num;
+					}
+				}
+				break;
+		}
+		return max;
+	}
+	
+	//Returns the maximum element of the column specified by label
+	public Object getMax(String label) {
+		MyDataFrame col = new MyDataFrame();
+		Object max = null;
+		switch(label) {
+
+			case "state":
+				
+			case "gender":
+
+			case "year":
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getYear((MyData) babynames.get(i)));
+				}
+				max = Integer.MIN_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num > (int) max) {
+						max = num;
+					}
+				}
+				break;
+				
+			case "name":
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getName((MyData) babynames.get(i)));
+				}
+				max = Integer.MIN_VALUE;
+				int maxInd = 0;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = ((String) col.babynames.get(i)).length();
+					if(num > (int) max) {
+						max = num;
+						maxInd = i;
+					}
+				}
+				max = col.babynames.get(maxInd);
+				break;
+				
+			case "count":
+				for(int i = 0; i < babynames.size(); i++) {
+					col.babynames.add(MyData.getCount((MyData) babynames.get(i)));
+				}
+				max = Integer.MIN_VALUE;
+				for(int i =0; i < col.babynames.size(); i++) {
+					int num = (int) col.babynames.get(i);
+					if(num > (int) max) {
+						max = num;
+					}
+				}
+				break;
+		}
+		return max;
 	}
 }
 
