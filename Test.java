@@ -62,6 +62,16 @@ public class Test {
 			//System.out.println(babytail.babynames.get(i));
 		//}
 		
+		//test dType on index
+		String typeIndex = baby.dType(2);
+		System.out.println("The type of index 2 (year) is:");
+		System.out.println(typeIndex);
+		
+		//test dType on name
+		String typeName = baby.dType("name");
+		System.out.println("The type of name column is:");
+		System.out.println(typeName);
+		
 		//test slice on index (gender)
 		MyDataFrame genderslice = baby.slice(1);
 		System.out.println("Test slice on index (gender):");

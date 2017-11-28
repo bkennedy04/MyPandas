@@ -1,7 +1,5 @@
 package Project2;
 
-import java.util.UUID;
-
 public class MyData {
 	
 	//variables of a single row

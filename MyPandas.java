@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
 public class MyPandas {
 	
 	public MyDataFrame readCSV(String path) throws IOException {
