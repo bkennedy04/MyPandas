@@ -133,6 +133,10 @@ public class Test {
 		System.out.println("The max count is:");
 		System.out.println(maxCount);
 	
+		//test getMax on state
+		Object maxSt = baby.getMax("state");
+		System.out.println("The max state is:");
+		System.out.println(maxSt);
 System.out.println("\n------------------------------------------------------------------------------------\n");
 
 		//test readcsv

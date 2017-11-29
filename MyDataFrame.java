@@ -1,6 +1,7 @@
 package Project2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MyDataFrame {
@@ -349,14 +350,23 @@ public class MyDataFrame {
 	//Returns the minimum element of the column specified by index
 	public Object getMin(int index) {
 		MyDataFrame col = new MyDataFrame();
+		ArrayList<String> strs = new ArrayList<String>();
 		Object min = null;
 		switch(index) {
 			//state
 			case 0:
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getState((MyData) babynames.get(i)));
+				}
+				min = Collections.min(strs);
 				break;
 				
 			//gender
 			case 1:
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getGender((MyData) babynames.get(i)));
+				}
+				min = Collections.min(strs);
 				break;
 
 			//year
@@ -388,6 +398,11 @@ public class MyDataFrame {
 					}
 				}
 				min = col.babynames.get(minInd);
+//				for(int i = 0; i < babynames.size(); i++) {
+//					strs.add(MyData.getName((MyData) babynames.get(i)));
+//				}
+//				Collections.sort(strs);
+//				min = strs.get(0);
 				break;
 				
 			//count
@@ -410,13 +425,21 @@ public class MyDataFrame {
 	//Returns the minimum element of the column specified by label
 	public Object getMin(String label) {
 		MyDataFrame col = new MyDataFrame();
+		ArrayList<String> strs = new ArrayList<String>();
 		Object min = null;
 		switch(label) {
-
 			case "state":
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getState((MyData) babynames.get(i)));
+				}
+				min = Collections.min(strs);
 				break;
 				
 			case "gender":
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getGender((MyData) babynames.get(i)));
+				}
+				min = Collections.min(strs);
 				break;
 
 			case "year":
@@ -467,13 +490,24 @@ public class MyDataFrame {
 	//Returns the maximum element of the column specified by index
 	public Object getMax(int index) {
 		MyDataFrame col = new MyDataFrame();
+		ArrayList<String> strs = new ArrayList<String>();
 		Object max = null;
 		switch(index) {
 			//state
 			case 0:
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getState((MyData) babynames.get(i)));
+				}
+				max = Collections.max(strs);
+				break;
 				
 			//gender
 			case 1:
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getGender((MyData) babynames.get(i)));
+				}
+				max = Collections.max(strs);
+				break;
 
 			//year
 			case 2:
@@ -526,13 +560,24 @@ public class MyDataFrame {
 	//Returns the maximum element of the column specified by label
 	public Object getMax(String label) {
 		MyDataFrame col = new MyDataFrame();
+		ArrayList<String> strs = new ArrayList<String>();
 		Object max = null;
 		switch(label) {
 
 			case "state":
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getState((MyData) babynames.get(i)));
+				}
+				max = Collections.max(strs);
+				break;
 				
 			case "gender":
-
+				for(int i = 0; i < babynames.size(); i++) {
+					strs.add(MyData.getGender((MyData) babynames.get(i)));
+				}
+				max = Collections.max(strs);
+				break;
+				
 			case "year":
 				for(int i = 0; i < babynames.size(); i++) {
 					col.babynames.add(MyData.getYear((MyData) babynames.get(i)));
