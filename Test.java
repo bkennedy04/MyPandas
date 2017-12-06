@@ -63,35 +63,35 @@ public class Test {
 		
 		//test head
 		MyDataFrame babyhead = baby.head(5);
-		System.out.println("Testing Head(5):");
+		System.out.println("\nTesting Head(5):");
 		writer.println("\nTesting Head(5)");
 		System.out.println(babyhead.babynames);
 		writer.println(babyhead.babynames);
 
 		//test tail
 		MyDataFrame babytail = baby.tail(5);
-		System.out.println("Testing Tail(5):");
+		System.out.println("\nTesting Tail(5):");
 		writer.println("\nTesting Tail(5):");
 		System.out.println(babytail.babynames);
 		writer.println(babytail.babynames);
 		
 		//test dType on index
 		String typeIndex = baby.dType(2);
-		System.out.println("The type of index 2 (year) is:");
+		System.out.println("\nThe type of index 2 (year) is:");
 		writer.println("\nThe type of index 2 (year) is:");
 		System.out.println(typeIndex);
 		writer.println(typeIndex);
 		
 		//test dType on name
 		String typeName = baby.dType("name");
-		System.out.println("The type of name column is:");
+		System.out.println("\nThe type of name column is:");
 		writer.println("\nThe type of name column is:");
 		System.out.println(typeName);
 		writer.println(typeName);
 		
 		//test slice on index (gender)
 		MyDataFrame genderslice = baby.slice(1);
-		System.out.println("Test slice on index (gender):");
+		System.out.println("\nTest slice on index (gender):");
 		writer.println("\nTest slice on index (gender):");
 		//print first element in slice
 		System.out.println(genderslice.babynames.get(0));
@@ -99,7 +99,7 @@ public class Test {
 		
 		//test slice on name (name)
 		MyDataFrame nameslice = baby.slice("name");
-		System.out.println("Test slice on name:");
+		System.out.println("\nTest slice on name:");
 		writer.println("\nTest slice on name:");
 		//print first element of slice
 		System.out.println(nameslice.babynames.get(0));
@@ -108,7 +108,7 @@ public class Test {
 		//test slice on index array ([1,3] (gender, name))
 		int[] indexArr = new int[] {1,3};
 		MyDataFrame indArrSlice = baby.slice(indexArr);
-		System.out.println("Test slices on index array (1,3):");
+		System.out.println("\nTest slices on index array (1,3):");
 		writer.println("\nTest slices on index array (1,3):");
 		MyDataFrame topFiveSlice = indArrSlice.head(5);
 		System.out.println(topFiveSlice.babynames);
@@ -117,7 +117,7 @@ public class Test {
 		//test slice on name array (["state", "year", "name", "count"])
 		String[] nameArr = new String[] {"state", "year", "name", "count"};
 		MyDataFrame nameArrSlice = baby.slice(nameArr);
-		System.out.println("Test slices on name array ([\"state\", \"year\", \"name\", \"count\"]):");
+		System.out.println("\nTest slices on name array ([\"state\", \"year\", \"name\", \"count\"]):");
 		writer.println("\nTest slices on name array ([\"state\", \"year\", \"name\", \"count\"]):");
 		MyDataFrame topSlice = nameArrSlice.head(5);
 		System.out.println(topSlice.babynames);
@@ -126,59 +126,59 @@ public class Test {
 		//test filter on name = "Brooke"
 		MyDataFrame brooke = baby.filter("name", "=", "Brooke");
 		MyDataFrame topBrooke = brooke.head(5);
-		System.out.println("Filter on name = \"Brooke\":");
+		System.out.println("\nFilter on name = \"Brooke\":");
 		writer.println("\nFilter on name = \"Brooke\":");
 		System.out.println(topBrooke.babynames);
 		writer.println(topBrooke.babynames);
 		MyDataFrame brooke1995 = brooke.filter("year", "=", 1995).head(5);
-		System.out.println("Filter on name = Brooke and year = 1995");
+		System.out.println("\nFilter on name = Brooke and year = 1995");
 		writer.println("\nFilter on name = Brooke and year = 1995");
 		System.out.println(brooke1995.babynames);
 		writer.println(brooke1995.babynames);
 		MyDataFrame brookeCount = brooke1995.filter("count", ">", 50);
-		System.out.println("Filter on name = Brooke, year = 1995, and count > 50:");
+		System.out.println("\nFilter on name = Brooke, year = 1995, and count > 50:");
 		writer.println("\nFilter on name = Brooke, year = 1995, and count > 50:");
 		System.out.println(brookeCount.babynames);
 		writer.println(brookeCount.babynames);
 		
 		//test loc on index (1000000)
 		MyDataFrame locdf = baby.loc(1000000);
-		System.out.println("Size of dataframe after loc(1,000,000):");
+		System.out.println("\nSize of dataframe after loc(1,000,000):");
 		writer.println("\nSize of dataframe after loc(1,000,000):");
 		System.out.println(locdf.babynames.size());
 		writer.println(locdf.babynames.size());
 		
 		//test loc from index 5 to index 10
 		MyDataFrame locrange = baby.loc(5, 10);
-		System.out.println("Dataframe after loc(5, 10):");
+		System.out.println("\nDataframe after loc(5, 10):");
 		writer.println("\nDataframe after loc(5, 10):");
 		System.out.println(locrange.babynames);
 		writer.println(locrange.babynames);
 		
 		//test getMin on index 2 (year)
 		Object minYear = baby.getMin(2);
-		System.out.println("The min year is:");
+		System.out.println("\nThe min year is:");
 		writer.println("\nThe min year is:");
 		System.out.println(minYear);
 		writer.println(minYear);
 		
 		//test getMin on index 3 (name)
 		Object minName = baby.getMin(3);
-		System.out.println("The name with min length is:");
+		System.out.println("\nThe name with min length is:");
 		writer.println("\nThe name with min length is:");
 		System.out.println(minName);
 		writer.println(minName);
 		
 		//test getMax on count
 		Object maxCount = baby.getMax("count");
-		System.out.println("The max count is:");
+		System.out.println("\nThe max count is:");
 		writer.println("\nThe max count is:");
 		System.out.println(maxCount);
 		writer.println(maxCount);
 	
 		//test getMax on state
 		Object maxSt = baby.getMax("state");
-		System.out.println("The max state is:");
+		System.out.println("\nThe max state is:");
 		writer.println("\nThe max state is:");
 		System.out.println(maxSt);
 		writer.println(maxSt);
@@ -186,19 +186,20 @@ public class Test {
 		//test sort on count specified by index
 		MyDataFrame smaller = baby.head(100);
 		MyDataFrame sortedCount = smaller.sort(4);
-		System.out.println("Dataframe after sorting by count on babynames.head(100):");
+		System.out.println("\nDataframe after sorting by count on babynames.head(100):");
 		writer.println("\nDataframe after sorting by count on babynames.head(100):");
 		System.out.println(sortedCount.babynames);
 		writer.println(sortedCount.babynames);
 		
 		//test sort on name specified by name
 		MyDataFrame sortedName = smaller.sort("name");
-		System.out.println("Dataframe after sorting by name on babynames.head(100):");
+		System.out.println("\nDataframe after sorting by name on babynames.head(100):");
 		writer.println("\nDataframe after sorting by name on babynames.head(100):");
 		System.out.println(sortedName.babynames);
 		writer.println(sortedName.babynames);
 		
 		//test write csv (write sortedName to csv)
+		System.out.println("\nWrite above dataframe to csv. (See 'sortedName.csv')");
 		writer.println("\nWrite above dataframe to csv. (See 'sortedName.csv')");
 		try {
 			MyPandas.writeCSV(sortedName, "sortedName.csv");
