@@ -126,7 +126,7 @@ public class Test {
 		//test filter on name = "Brooke"
 		MyDataFrame brooke = baby.filter("name", "=", "Brooke");
 		MyDataFrame topBrooke = brooke.head(5);
-		System.out.println("\nFilter on name = \"Brooke\":");
+		System.out.println("\nFilter on name = \"Brooke\" and output head(5):");
 		writer.println("\nFilter on name = \"Brooke\":");
 		System.out.println(topBrooke.babynames);
 		writer.println(topBrooke.babynames);
