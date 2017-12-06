@@ -5,6 +5,16 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.io.File;
 
+/**
+ * Project 2 - Java  
+ * The Test class offers tests for the interfaces implemented
+ * in the MyDataFrame and MyPandas classes. It prints these tests to both the
+ * console and methodTests.txt.
+ * 
+ * @author Brooke Kennedy
+ * @author Jamie Chen
+ * @since 2017-12-05
+ */
 public class Test {
 	
 	//get all txt files from a directory

@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Project 2 - Java  
+ * The MyDataFrame class offers interfaces similar
+ * to those found in Python Pandas dataframes.
+ *
+ * @author Brooke Kennedy
+ * @author Jamie Chen
+ * @since 2017-12-05
+ */
 public class MyDataFrame {
 	
 	//member variables

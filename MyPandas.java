@@ -6,6 +6,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Project 2 - Java  
+ * The MyPandas class offers interfaces for
+ * reading, writing, and concatinating MyDataFrame objects.
+ *
+ * @author Brooke Kennedy
+ * @author Jamie Chen
+ * @since 2017-12-05
+ */
 public class MyPandas {
 	
 	public static MyDataFrame readCSV(String path) throws IOException {

@@ -1,5 +1,14 @@
 package Project2;
 
+/**
+ * Project 2 - Java  
+ * The MyData class offers the structure for
+ * working with the babynames by states files.
+ *
+ * @author Brooke Kennedy
+ * @author Jamie Chen
+ * @since 2017-12-05
+ */
 public class MyData {
 	
 	//variables of a single row
