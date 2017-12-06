@@ -127,7 +127,7 @@ public class Test {
 		MyDataFrame brooke = baby.filter("name", "=", "Brooke");
 		MyDataFrame topBrooke = brooke.head(5);
 		System.out.println("\nFilter on name = \"Brooke\" and output head(5):");
-		writer.println("\nFilter on name = \"Brooke\":");
+		writer.println("\nFilter on name = \"Brooke\" and output head(5):");
 		System.out.println(topBrooke.babynames);
 		writer.println(topBrooke.babynames);
 		MyDataFrame brooke1995 = brooke.filter("year", "=", 1995).head(5);
