@@ -41,7 +41,7 @@ public class Test {
 		ArrayList<String> myFiles = getFiles(directoryPath);
 		//System.out.println(Arrays.toString(myFiles.toArray()));
 		
-		//test loadBabyNames
+		//test loadBabyNames (this tests readCSV and concat)
 		MyDataFrame baby = loadBabyNames(myFiles, directoryPath);
 		System.out.println("Dataframe size after loading all states:");
 		System.out.println(baby.babynames.size());
@@ -88,9 +88,6 @@ public class Test {
 		System.out.println("Test slices on index array (1,3):");
 		MyDataFrame topFiveSlice = indArrSlice.head(5);
 		System.out.println(topFiveSlice.babynames);
-		
-		//select just one item from one row
-		//System.out.println("Top name: " + ((List<?>) topFiveSlice.babynames.get(0)).get(1));
 		
 		//test slice on name array (["state", "year", "name", "count"])
 		String[] nameArr = new String[] {"state", "year", "name", "count"};
@@ -153,20 +150,13 @@ public class Test {
 		System.out.println("Dataframe after sorting by name on babynames.head(100):");
 		System.out.println(sortedName.babynames);
 		
-		
-System.out.println("\n------------------------------------------------------------------------------------\n");
-
-		
-		//test write Csv
-//		try {
-//			MyPandas.writeCSV(mdf, "newFileName.txt");
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-
+		//test write csv (write sortedName to csv)
+		try {
+			MyPandas.writeCSV(sortedName, "sortedName.csv");
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
 }
 

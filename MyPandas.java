@@ -47,14 +47,16 @@ public class MyPandas {
 		// File to write out, path has the file location and output file name
 		FileWriter writer = new FileWriter(path);
 		
-		// Loop through and write each of the headers
-		for (int i = 0; i < data.headers.length; i++) {
-			writer.write(data.headers[i] + "\t");
+		// Loop through and write each of the headers, if headers exists
+		if(data.headers != null) {
+			for (int i = 0; i < data.headers.length; i++) {
+				writer.write(data.headers[i] + ",");
+			}
 		}
 		writer.write("\n");
 		// writer out each row of babynames;
 		for (int i = 0; i < data.babynames.size(); i++) {
-			writer.write(data.babynames.get(i).toString());
+			writer.write(MyData.getState((MyData) data.babynames.get(i)) +","+ MyData.getGender((MyData) data.babynames.get(i)) +","+ MyData.getYear((MyData) data.babynames.get(i)) +","+ MyData.getName((MyData) data.babynames.get(i)) +","+ MyData.getCount((MyData) data.babynames.get(i)) +"\n");
 		}
 		writer.close();
 	}

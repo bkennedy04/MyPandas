@@ -813,22 +813,3 @@ public class MyDataFrame {
 		return max;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
