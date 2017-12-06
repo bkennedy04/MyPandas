@@ -347,6 +347,201 @@ public class MyDataFrame {
 		return loc;
 	}
 	
+	//Returns the data sorted by the column specified by index
+	public MyDataFrame sort(int index) {
+		
+		int[] indexes = new int[babynames.size()];
+		MyDataFrame sorted = new MyDataFrame();
+		
+		switch(index) {
+			//state
+			case 0:
+				ArrayList<String> colState = new ArrayList<>();
+				for(int i = 0; i < babynames.size(); i++) {
+					colState.add(MyData.getState((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<String> indState = new ArrayList<String>(colState);
+				//sort column list
+				Collections.sort(colState);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colState.size(); n++){
+				    indexes[n] = indState.indexOf(colState.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indState.set(indexes[n], null);
+				}
+				break;
+				
+			//gender
+			case 1:
+				ArrayList<String> colGender = new ArrayList<>();	
+				for(int i = 0; i < babynames.size(); i++) {
+					colGender.add(MyData.getGender((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<String> indGender = new ArrayList<String>(colGender);
+				//sort column list
+				Collections.sort(colGender);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colGender.size(); n++){
+				    indexes[n] = indGender.indexOf(colGender.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indGender.set(indexes[n], null);
+				}
+				break;
+				
+			//year
+			case 2:
+				ArrayList<Integer> colYear = new ArrayList<>();	
+				for(int i = 0; i < babynames.size(); i++) {
+					colYear.add(MyData.getYear((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<Integer> indYear = new ArrayList<Integer>(colYear);
+				//sort column list
+				Collections.sort(colYear);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < indexes.length; n++){
+				    indexes[n] = indYear.indexOf(colYear.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indYear.set(indexes[n], null);
+				}
+				break;
+				
+			//name
+			case 3:
+				ArrayList<String> colName = new ArrayList<>();	
+				for(int i = 0; i < babynames.size(); i++) {
+					colName.add(MyData.getName((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<String> indName = new ArrayList<String>(colName);
+				//sort column list
+				Collections.sort(colName);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colName.size(); n++){
+				    indexes[n] = indName.indexOf(colName.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indName.set(indexes[n], null);
+				}
+				break;
+				
+			//count
+			case 4:
+				ArrayList<Integer> colCount = new ArrayList<>();		
+				for(int i = 0; i < babynames.size(); i++) {
+					colCount.add(MyData.getCount((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<Integer> indCount = new ArrayList<Integer>(colCount);
+				//sort column list
+				Collections.sort(colCount);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colCount.size(); n++){
+				    indexes[n] = indCount.indexOf(colCount.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indCount.set(indexes[n], null);
+				}
+				break;
+		}
+		return sorted;
+	}
+	
+	//Returns the data sorted by the column specified by name
+	public MyDataFrame sort(String name) {
+		
+		int[] indexes = new int[babynames.size()];
+		MyDataFrame sorted = new MyDataFrame();
+		
+		switch(name) {
+			case "state":
+				ArrayList<String> colState = new ArrayList<>();
+				for(int i = 0; i < babynames.size(); i++) {
+					colState.add(MyData.getState((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<String> indState = new ArrayList<String>(colState);
+				//sort column list
+				Collections.sort(colState);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colState.size(); n++){
+				    indexes[n] = indState.indexOf(colState.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indState.set(indexes[n], null);
+				}
+				break;
+				
+			case "gender":
+				ArrayList<String> colGender = new ArrayList<>();	
+				for(int i = 0; i < babynames.size(); i++) {
+					colGender.add(MyData.getGender((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<String> indGender = new ArrayList<String>(colGender);
+				//sort column list
+				Collections.sort(colGender);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colGender.size(); n++){
+				    indexes[n] = indGender.indexOf(colGender.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indGender.set(indexes[n], null);
+				}
+				break;
+				
+			case "year":
+				ArrayList<Integer> colYear = new ArrayList<>();	
+				for(int i = 0; i < babynames.size(); i++) {
+					colYear.add(MyData.getYear((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<Integer> indYear = new ArrayList<Integer>(colYear);
+				//sort column list
+				Collections.sort(colYear);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < indexes.length; n++){
+				    indexes[n] = indYear.indexOf(colYear.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indYear.set(indexes[n], null);
+				}
+				break;
+				
+			case "name":
+				ArrayList<String> colName = new ArrayList<>();	
+				for(int i = 0; i < babynames.size(); i++) {
+					colName.add(MyData.getName((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<String> indName = new ArrayList<String>(colName);
+				//sort column list
+				Collections.sort(colName);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colName.size(); n++){
+				    indexes[n] = indName.indexOf(colName.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indName.set(indexes[n], null);
+				}
+				break;
+				
+			case "count":
+				ArrayList<Integer> colCount = new ArrayList<>();		
+				for(int i = 0; i < babynames.size(); i++) {
+					colCount.add(MyData.getCount((MyData) babynames.get(i)));
+				}
+				//make a copy of the column list
+				ArrayList<Integer> indCount = new ArrayList<Integer>(colCount);
+				//sort column list
+				Collections.sort(colCount);
+				//get the initial indexes from the sorted list
+				for (int n = 0; n < colCount.size(); n++){
+				    indexes[n] = indCount.indexOf(colCount.get(n));
+				    sorted.babynames.add(babynames.get(indexes[n]));
+				    indCount.set(indexes[n], null);
+				}
+				break;
+		}
+		return sorted;
+	}
+	
 	//Returns the minimum element of the column specified by index
 	public Object getMin(int index) {
 		MyDataFrame col = new MyDataFrame();
@@ -398,11 +593,6 @@ public class MyDataFrame {
 					}
 				}
 				min = col.babynames.get(minInd);
-//				for(int i = 0; i < babynames.size(); i++) {
-//					strs.add(MyData.getName((MyData) babynames.get(i)));
-//				}
-//				Collections.sort(strs);
-//				min = strs.get(0);
 				break;
 				
 			//count

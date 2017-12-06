@@ -107,6 +107,10 @@ public class Test {
 		MyDataFrame brooke1995 = brooke.filter("year", "=", 1995).head(5);
 		System.out.println("Filter on name = Brooke and year = 1995");
 		System.out.println(brooke1995.babynames);
+		MyDataFrame brookeCount = brooke1995.filter("count", ">", 50);
+		System.out.println("Filter on name = Brooke, year = 1995, and count > 50:");
+		System.out.println(brookeCount.babynames);
+		
 		
 		//test loc on index (1000000)
 		MyDataFrame locdf = baby.loc(1000000);
@@ -115,8 +119,8 @@ public class Test {
 		
 		//test loc from index 5 to index 10
 		MyDataFrame locrange = baby.loc(5, 10);
-		System.out.println("Size of dataframe after loc(5, 10):");
-		System.out.println(locrange.babynames.size());
+		System.out.println("Dataframe after loc(5, 10):");
+		System.out.println(locrange.babynames);
 		
 		//test getMin on index 2 (year)
 		Object minYear = baby.getMin(2);
@@ -137,50 +141,31 @@ public class Test {
 		Object maxSt = baby.getMax("state");
 		System.out.println("The max state is:");
 		System.out.println(maxSt);
+		
+		//test sort on count specified by index
+		MyDataFrame smaller = baby.head(100);
+		MyDataFrame sortedCount = smaller.sort(4);
+		System.out.println("Dataframe after sorting by count on babynames.head(100):");
+		System.out.println(sortedCount.babynames);
+		
+		//test sort on name specified by name
+		MyDataFrame sortedName = smaller.sort("name");
+		System.out.println("Dataframe after sorting by name on babynames.head(100):");
+		System.out.println(sortedName.babynames);
+		
+		
 System.out.println("\n------------------------------------------------------------------------------------\n");
 
-		//test readcsv
-		MyDataFrame mdf = null;
-		try {
-			String path = "C:\\Users\\bck00\\Documents\\Fall 2017\\Java and Python\\proj2\\babynames\\AK.TXT";
-			mdf = MyPandas.readCSV(path);
-		} 
-		catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		//for (int i = 0; i < 10; i++) {
-			//System.out.println(mdf.babynames.get(i).toString());
-		//}
 		
 		//test write Csv
-		try {
-			MyPandas.writeCSV(mdf, "newFileName.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			MyPandas.writeCSV(mdf, "newFileName.txt");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
-		//test concatenate
-		MyDataFrame mdf2 = null;
-		
-		try {
-			String path = "C:\\Users\\bck00\\Documents\\Fall 2017\\Java and Python\\proj2\\babynames\\AL.TXT";
-			mdf2 = MyPandas.readCSV(path);
-		} 
-		catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		MyDataFrame concat = MyPandas.concat(mdf, mdf2);
-		for (int i = 0; i < 10; i++) {
-			System.out.println(concat.babynames.get(i));
-		}
-		System.out.println(mdf.babynames.size());
-		System.out.println(mdf2.babynames.size());
-		System.out.println(concat.babynames.size());
+
 	}
 
 }
