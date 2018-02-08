@@ -1,11 +1,6 @@
 # MSiA 422 Final Project - MyPandas in Java
 
-In this project, you are going to implement a simple version of Pandas in Java. You can
-assume that you will only work on the baby name by state dataset which is the same one
-you worked on in project 1. There are 5 columns: state (String), gender (String), year
-(Integer), name (String), count (Integer). There is no limitation on the number of rows.
-Implement the following functionalities and write at least one test for each method. Write a
-document showing the output of your tests.
+In this project, you are going to implement a simple version of Pandas in Java. You can assume that you will only work on the [baby name by state dataset](https://catalog.data.gov/dataset?tags=baby-names "Baby names data") which is the same one you worked on in project 1. There are 5 columns: state (String), gender (String), year (Integer), name (String), count (Integer). There is no limitation on the number of rows. Implement the following functionalities and write at least one test for each method. Write a document showing the output of your tests.
 
 Implement a MyPandas class and a MyDataFrame class. 
 ## The MyPandas class should offer the following interfaces:
