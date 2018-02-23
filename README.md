@@ -13,47 +13,47 @@ Concatenate two MyDataFrame object along rows. Returns the concatenated MyDataFr
 
 ## MyDataFrame class should offer the following interfaces:
 ### 1. Head and Tail.
-MyDataFrame head(int n)
-Returns the first n rows of the data.
-MyDataFrame tail(int n)
-Returns the last n rows of the data.
+MyDataFrame head(int n)\
+Returns the first n rows of the data.\
+MyDataFrame tail(int n)\
+Returns the last n rows of the data.\
 ### 2. dType
-String dType(int index)
-Returns the type of the column specified by index. If the type is not uniform, return ‘String’.
-String dType(String name)
-Returns the type of the column specified by name. If the type is not uniform, return ‘String’.
+String dType(int index)\
+Returns the type of the column specified by index. If the type is not uniform, return ‘String’.\
+String dType(String name)\
+Returns the type of the column specified by name. If the type is not uniform, return ‘String’.\
 ### 3. Slicing
-MyDataFrame slice(int index)
-Returns the column specified by index.
-MyDataFrame slice(String name)
-Returns the column specified by name.
-MyDataFrame slice(int[] indexArr)
-Returns the columns specified by an index array.
-MyDataFrame slice(String[] nameArr)
-Returns the columns specified by a name array.
+MyDataFrame slice(int index)\
+Returns the column specified by index.\
+MyDataFrame slice(String name)\
+Returns the column specified by name.\
+MyDataFrame slice(int[] indexArr)\
+Returns the columns specified by an index array.\
+MyDataFrame slice(String[] nameArr)\
+Returns the columns specified by a name array.\
 ### 4. Filtering
-MyDataFrame filter(String col, String op, Object o)
-Returns data filtered by applying “col op o” on MyDataFrame object, e.g. “count > 10”, “state = ‘IL’”.
+MyDataFrame filter(String col, String op, Object o)\
+Returns data filtered by applying “col op o” on MyDataFrame object, e.g. “count > 10”, “state = ‘IL’”.\
 ### 5. Indexing
-MyDataFrame loc(int index)
-Returns the rows starting from index.
-MyDataFrame loc(String label)
-Returns the rows starting from label.
-MyDataFrame loc(int from, int to)
-Returns the rows between from and to (including from and to).
-MyDataFrame loc(String from, String to)
-Returns the rows between from and to (including from and to).
+MyDataFrame loc(int index)\
+Returns the rows starting from index.\
+MyDataFrame loc(String label)\
+Returns the rows starting from label.\
+MyDataFrame loc(int from, int to)\
+Returns the rows between from and to (including from and to).\
+MyDataFrame loc(String from, String to)\
+Returns the rows between from and to (including from and to).\
 ### 6. Sorting
-MyDataFrame sort(int index)
-Returns the data sorted by the column specified by index.
-MyDataFrame sort(String name)
-Returns the data sorted by the column specified by name.
+MyDataFrame sort(int index)\
+Returns the data sorted by the column specified by index.\
+MyDataFrame sort(String name)\
+Returns the data sorted by the column specified by name.\
 ### 7. Aggregation
-Object getMin(int index)
-Returns the minimum element of the column specified by index.
-Object getMin(String label)
-Returns the minimum element of the column specified by label.
-Object getMax(int index)
-Returns the maximum element of the column specified by index.
-Object getMax(String label)
-Returns the maximum element of the column specified by label.
+Object getMin(int index)\
+Returns the minimum element of the column specified by index.\
+Object getMin(String label)\
+Returns the minimum element of the column specified by label.\
+Object getMax(int index)\
+Returns the maximum element of the column specified by index.\
+Object getMax(String label)\
+Returns the maximum element of the column specified by label.\
