@@ -16,12 +16,12 @@ Concatenate two MyDataFrame object along rows. Returns the concatenated MyDataFr
 MyDataFrame head(int n)\
 Returns the first n rows of the data.\
 MyDataFrame tail(int n)\
-Returns the last n rows of the data.\
+Returns the last n rows of the data.
 ### 2. dType
 String dType(int index)\
 Returns the type of the column specified by index. If the type is not uniform, return ‘String’.\
 String dType(String name)\
-Returns the type of the column specified by name. If the type is not uniform, return ‘String’.\
+Returns the type of the column specified by name. If the type is not uniform, return ‘String’.
 ### 3. Slicing
 MyDataFrame slice(int index)\
 Returns the column specified by index.\
@@ -30,7 +30,7 @@ Returns the column specified by name.\
 MyDataFrame slice(int[] indexArr)\
 Returns the columns specified by an index array.\
 MyDataFrame slice(String[] nameArr)\
-Returns the columns specified by a name array.\
+Returns the columns specified by a name array.
 ### 4. Filtering
 MyDataFrame filter(String col, String op, Object o)\
 Returns data filtered by applying “col op o” on MyDataFrame object, e.g. “count > 10”, “state = ‘IL’”.\
@@ -42,12 +42,12 @@ Returns the rows starting from label.\
 MyDataFrame loc(int from, int to)\
 Returns the rows between from and to (including from and to).\
 MyDataFrame loc(String from, String to)\
-Returns the rows between from and to (including from and to).\
+Returns the rows between from and to (including from and to).
 ### 6. Sorting
 MyDataFrame sort(int index)\
 Returns the data sorted by the column specified by index.\
 MyDataFrame sort(String name)\
-Returns the data sorted by the column specified by name.\
+Returns the data sorted by the column specified by name.
 ### 7. Aggregation
 Object getMin(int index)\
 Returns the minimum element of the column specified by index.\
@@ -56,4 +56,4 @@ Returns the minimum element of the column specified by label.\
 Object getMax(int index)\
 Returns the maximum element of the column specified by index.\
 Object getMax(String label)\
-Returns the maximum element of the column specified by label.\
+Returns the maximum element of the column specified by label.
